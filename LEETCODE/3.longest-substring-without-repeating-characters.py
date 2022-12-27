@@ -1,3 +1,4 @@
+# https://leetcode.com/problems/longest-substring-without-repeating-characters/description/
 #
 # @lc app=leetcode id=3 lang=python
 #
@@ -7,6 +8,7 @@
 class Solution(object):
     def lengthOfLongestSubstring(self, s: str) -> int:
         """
+        Redid this problem on 26/12/22
         This is a typical dynamic programming problem, a bit
         similar to Longest Increasing Sequence (LIS)
         but with a substring and no repeat constraint
