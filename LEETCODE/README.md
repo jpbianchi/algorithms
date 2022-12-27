@@ -1,5 +1,5 @@
 These problems come from Leetcode.
-Also look into leetcode/editor/en which were put there by a Pycharm Leetcode plugin.
+The comments such as "# leetcode submit region" were added by Leetcode plugin.
 
 To extract the most out of a problem, beyond solving it, I first come up with a solution.
 Then I try to optimize it for speed or memory, according to the Leetcode scores of the previous solution.
