@@ -6,15 +6,15 @@
 # if n = 2 k + 1, then do x x^2k = x (x^2)^k
 # in other words, x^n = x^(n%2) pow(x^2, n//2) = x^(n%2) pow(x', n')
 
-# we have the same problem but with x'=x^2 (1) and n'=n//2 (5) and eventually n' -> 0
+# we have the same problem but with x'=x^2 (1) and n'=n//2 (5), we stop when n' = 1 (4)
 # one could write x^n = x^(n%2) (x^2)^(n//2%2) (x^4)^(n//4%2)... 
 # this shows we do not care about pow(x', n'), we only track the oddity of 
 # n' to decide if we use x' at that iteration or not
 
-# so at each iteration, we square the previous x to get x' (1), even if we don't use it
-# we also need to test if the exponent is odd (3), in which case we multiply
-# the temporary result by the current power of x (2), and we repeat with x^2 (1) and n//2 (5)
-# in the end the exponent will be 1 (4)
+# so at each iteration, we also need to test if the exponent is odd (3), in which 
+# case we multiply the temporary result by the current power of x (2)
+# then we prepare the next iteration by squaring (1) the current value of x to get x',
+# in case we need it, and the new exponent is n' = n//2 (5)
 
 
 def powxn(x, n):
