@@ -1,4 +1,6 @@
 These problems come from Leetcode.
+See my current results in the dashboard https://leetcode.com/jpbianchi/
+
 The comments such as "# leetcode submit region" were added by Leetcode plugin.
 
 To extract the most out of a problem, beyond solving it, I first come up with a solution.
