@@ -1,4 +1,17 @@
 from typing import List
+import time
+
+def timeit(prec=3):
+    def decorator(func):
+        def wrapper(*args, **kwargs):
+            start = time.time()
+            result = func(*args, **kwargs)
+            end = time.time()
+            print(f"{func.__name__} took {end-start:.{prec}f} seconds")
+            return result
+        return wrapper
+    return decorator
+
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
