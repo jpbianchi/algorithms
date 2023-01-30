@@ -1,7 +1,7 @@
 """
     This is an implementation for convolution for a NxCxHxW input and K kernels.
     See my article on substack "Vectorized convolutions"
-    https://aiandbrains.substack.com/publish/post/95245346
+    https://aiandbrains.substack.com/p/vectorized-convolutions
 """
 import numpy as np
 from dask.array import einsum, asarray
@@ -118,20 +118,20 @@ kernels = np.random.randn(K,C,kn,kn)
 
 # lets time the creation of the coordinates separately because 
 # it's the same for both, so we'l have the real difference by using Dask 
-# coords = convolution(x, kernels, stride, return_coords=True) # 55s
+coords = convolution(x, kernels, stride, return_coords=True) # 55s
 
-# cnn = convolution(x, kernels, stride, coords=coords)  # 37s
+cnn = convolution(x, kernels, stride, coords=coords)  # 37s
 
-# cnn2 = convolution(x, kernels, stride, einsumfunc=einsum, coords=coords)   # 21s
-# del(coords)
+cnn2 = convolution(x, kernels, stride, einsumfunc=einsum, coords=coords)   # 21s
+del(coords)
 
-# convolution took 55.555 seconds  # creation of the coordinates
+# convolution took 55.555 seconds  (creation of the coordinates)
 # convolution took 36.873 seconds  # Numpy
 # convolution took 21.247 seconds  # Dask 
 
 # ================================================================================
 # comparison Dask - Scipy
-# here we have to take C=1 again
+# here we have to take N=C=K=stride=1 again
 print("="*80)
 SEED = 123
     
@@ -151,6 +151,6 @@ start = time.time()
 cnn_sci = convolve2d(x[0,0], np.flipud(np.fliplr(kernels[0,0])), mode='same')
 print(f"Scipy took {time.time()-start:.1f} seconds")  # 0.9s
 
-# convolution took 9.469 seconds
+# convolution took 9.469 seconds (creation of the coordinates)
 # convolution took 4.088 seconds
 # Scipy took 0.9 seconds
