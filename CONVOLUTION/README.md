@@ -1,1 +1,1 @@
-See [article on Substack](https://aiandbrains.substack.com/p/vectorized-convolutions) for explanations.  
+See [article on Substack](https://aiandbrains.substack.com/p/vectorized-convolutions) for explanations. 
