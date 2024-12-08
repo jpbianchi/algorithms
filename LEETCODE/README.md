@@ -18,5 +18,5 @@ Original solutions:
 
 - prob 542: can be solved by scanning every cell of the matrix with two nested for loops.
 Instead, I used numpy.vectorize on the main matrix and 4 rolled version (up/down, left/right) to find the areas to be updated in parallel. It's slower but more interesting to solve it that way.
-
+ 
 - prob 98: instead of using recursion, I add two fields to the nodes to propagate the min and max values used for comparison so the tree can be scanned in one pass
