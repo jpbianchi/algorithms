@@ -1,0 +1,18 @@
+10 5
+770528134 663501748 384261537 800309024 103668401 538539662 385488901 101262949 557792122 46058493
+Expected OutputDownload
+6
+Authorzxqfd555
+DifficultyMedium
+Max Score20
+Submitted By48399
+NEED HELP?
+View discussions
+View editorial
+View top submissions
+RATE THIS CHALLENGE
+
+MORE DETAILS
+Download problem statement
+Download sample test cases
+Suggest Edits
